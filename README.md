@@ -1,4 +1,4 @@
-# Opanuj Frontend: AI Edition
+# Opanuj Frontend: AI Editions
 
 ![](./_resources/img/header.png)
 
