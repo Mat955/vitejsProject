@@ -42,7 +42,7 @@ jobs:
       - name: Build for Vercel
         run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy to Vercel
+      - name: Deploy to Vercels
         run: |
           DEPLOY_OUTPUT="$(vercel deploy --token=${{ secrets.VERCEL_TOKEN }})"
           DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep http | tail -n 1)
