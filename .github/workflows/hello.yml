@@ -1,0 +1,35 @@
+# <project_root>/.github/workflows/hello.yml
+
+name: Hello world!
+
+on:
+  workflow_dispatch:
+
+jobs:
+  app-setup:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Greeting
+        run: echo "Brawo! Znakomita robota!" >> $GITHUB_STEP_SUMMARY
