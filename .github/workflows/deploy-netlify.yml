@@ -1,4 +1,4 @@
-name: Deploy - Netlify
+name: Deploy - Netlifys
 
 on:
   workflow_call:

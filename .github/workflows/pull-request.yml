@@ -1,6 +1,6 @@
 # <project_root>/.github/workflows/hello.yml
 
-name: Deploy pr
+name: Deploy prs
 on:
   pull_request:
     branches:
